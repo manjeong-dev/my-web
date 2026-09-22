@@ -1,0 +1,16 @@
+.map-shell { height:380px; background:#edf1ed; }
+.map-shell.overview-shell { height:530px; }
+.travel-map { width:100%; height:100%; font-family:inherit; background:#edf1ed; }
+.map-help { font-size:12px; line-height:1.7; color:#4d5852; margin:8px 3px 12px; }
+.map-status { position:absolute; left:12px; bottom:30px; max-width:calc(100% - 90px); z-index:500; margin:0; padding:8px 12px; background:white; border-radius:8px; font-size:12px; pointer-events:none; }
+.map-status[hidden] { display:none; }
+.trip-marker { background:none; border:0; }
+.trip-pin { display:grid; place-items:center; width:40px; height:40px; box-sizing:border-box; background:#6744c4; color:white; border:3px solid white; border-radius:50%; box-shadow:0 2px 8px #30234566; font-size:16px; font-weight:800; }
+.leaflet-tooltip { font-family:inherit; font-size:13px; font-weight:700; border:1px solid #d4dcd5; border-radius:8px; padding:6px 10px; color:#25352b; box-shadow:0 2px 8px #24372818; }
+.leaflet-popup-content { font-size:15px; line-height:1.5; }
+.leaflet-control-zoom { border:1px solid #cbd6ce!important; border-radius:14px!important; overflow:hidden; box-shadow:0 3px 14px #25352b26!important; }
+.leaflet-control-zoom a { width:48px!important; height:48px!important; line-height:48px!important; font-size:28px!important; color:#284d3d!important; }
+.map-fit { min-height:44px; padding:0 14px; border:1px solid #cbd6ce; border-radius:12px; background:#fff; color:#284d3d; font:700 13px system-ui; box-shadow:0 2px 8px #25352b20; cursor:pointer; }
+.leaflet-container :focus-visible { outline:3px solid #6744c4; outline-offset:2px; }
+.leaflet-control-attribution { font-size:10px!important; }
+@media(max-width:520px) { .map-shell {height:360px} .map-shell.overview-shell {height:480px} }
