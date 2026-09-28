@@ -58,6 +58,9 @@ body{
 .day-summary{background:#FFFDF9;border:1px solid var(--line);border-radius:18px;padding:14px}
 .date-line{font-size:11px;font-weight:900;color:var(--green);margin-bottom:2px}
 .day-summary h2{margin:0;font-size:19px;line-height:1.28;letter-spacing:-.025em}
+.day-stay{display:flex;flex-wrap:wrap;align-items:center;gap:6px 12px;margin-top:12px;padding:10px 12px;border-radius:12px;background:#edf3ee;color:#284d3d;font-size:13px;line-height:1.5}
+.day-stay span{font-size:12px;white-space:nowrap}
+.day-stay strong{font-weight:800}
 .day-summary p{margin:5px 0 0;font-size:11px;color:var(--muted)}
 
 /* Reliable map behavior:
@@ -235,6 +238,7 @@ body{
 <div class="date-line">11월 3일 (화)</div>
 <h2>인천 출발</h2>
 <p>3명 · 국제선 · 기내 숙박</p>
+<div class="day-stay"><span>🌙 오늘 숙박</span><strong>기내 숙박</strong></div>
 </div>
 </div>
 <div class="map-shell" data-map-index="0"><div class="travel-map" role="region" aria-label="1일차 지도"></div><p class="map-status" role="status">지도를 불러오는 중…</p></div><div class="map-legend">● 방문 장소를 누르면 이름 표시  ·  ┄ 직선 이동 순서</div>
@@ -279,6 +283,7 @@ body{
 <div class="date-line">11월 4일 (수)</div>
 <h2>오클랜드 → 크라이스트처치</h2>
 <p>3명 · 도착일 · 회복 우선</p>
+<div class="day-stay"><span>🌙 오늘 숙박</span><strong>크라이스트처치</strong></div>
 </div>
 </div>
 <div class="map-shell" data-map-index="1"><div class="travel-map" role="region" aria-label="2일차 지도"></div><p class="map-status" role="status">지도를 불러오는 중…</p></div><div class="map-legend">● 방문 장소를 누르면 이름 표시  ·  ┄ 직선 이동 순서</div>
@@ -334,6 +339,7 @@ body{
 <div class="date-line">11월 5일 (목)</div>
 <h2>크라이스트처치 → 테카포</h2>
 <p>3명 · 테카포 1박 · 별보기</p>
+<div class="day-stay"><span>🌙 오늘 숙박</span><strong>테카포</strong></div>
 </div>
 </div>
 <div class="map-shell" data-map-index="2"><div class="travel-map" role="region" aria-label="3일차 지도"></div><p class="map-status" role="status">지도를 불러오는 중…</p></div><div class="map-legend">● 방문 장소를 누르면 이름 표시  ·  ┄ 직선 이동 순서</div>
@@ -389,6 +395,7 @@ body{
 <div class="date-line">11월 6일 (금)</div>
 <h2>테카포 → 푸카키 → 마운트쿡</h2>
 <p>3명 · 후커밸리 · 마운트쿡 1박</p>
+<div class="day-stay"><span>🌙 오늘 숙박</span><strong>마운트쿡</strong></div>
 </div>
 </div>
 <div class="map-shell" data-map-index="3"><div class="travel-map" role="region" aria-label="4일차 지도"></div><p class="map-status" role="status">지도를 불러오는 중…</p></div><div class="map-legend">● 방문 장소를 누르면 이름 표시  ·  ┄ 직선 이동 순서</div>
@@ -447,6 +454,7 @@ body{
 <div class="date-line">11월 7일 (토)</div>
 <h2>마운트쿡 → 와나카 → 퀸스타운</h2>
 <p>오후부터 4명 · 동생 합류 🎉</p>
+<div class="day-stay"><span>🌙 오늘 숙박</span><strong>퀸스타운 · 1/3박</strong></div>
 </div>
 </div>
 <div class="map-shell" data-map-index="4"><div class="travel-map" role="region" aria-label="5일차 지도"></div><p class="map-status" role="status">지도를 불러오는 중…</p></div><div class="map-legend">● 방문 장소를 누르면 이름 표시  ·  ┄ 직선 이동 순서</div>
@@ -512,6 +520,7 @@ body{
 <div class="date-line">11월 8일 (일)</div>
 <h2>밀포드 사운드</h2>
 <p>4명 · 남섬 핵심 일정 · 날씨 중요</p>
+<div class="day-stay"><span>🌙 오늘 숙박</span><strong>퀸스타운 · 2/3박</strong></div>
 </div>
 </div>
 <div class="map-shell" data-map-index="5"><div class="travel-map" role="region" aria-label="6일차 지도"></div><p class="map-status" role="status">지도를 불러오는 중…</p></div><div class="map-legend">● 방문 장소를 누르면 이름 표시  ·  ┄ 직선 이동 순서</div>
@@ -570,6 +579,7 @@ body{
 <div class="date-line">11월 9일 (월)</div>
 <h2>퀸스타운 여유일</h2>
 <p>4명 · 컨디션 따라 선택</p>
+<div class="day-stay"><span>🌙 오늘 숙박</span><strong>퀸스타운 · 3/3박</strong></div>
 </div>
 </div>
 <div class="map-shell" data-map-index="6"><div class="travel-map" role="region" aria-label="7일차 지도"></div><p class="map-status" role="status">지도를 불러오는 중…</p></div><div class="map-legend">● 방문 장소를 누르면 이름 표시  ·  ┄ 직선 이동 순서</div>
@@ -628,6 +638,7 @@ body{
 <div class="date-line">11월 10일 (화)</div>
 <h2>퀸스타운 → 오클랜드 → 로토루아</h2>
 <p>4명 · 북섬 시작 · 로토루아 1박째</p>
+<div class="day-stay"><span>🌙 오늘 숙박</span><strong>로토루아 · 1/2박</strong></div>
 </div>
 </div>
 <div class="map-shell" data-map-index="7"><div class="travel-map" role="region" aria-label="8일차 지도"></div><p class="map-status" role="status">지도를 불러오는 중…</p></div><div class="map-legend">● 방문 장소를 누르면 이름 표시  ·  ┄ 직선 이동 순서</div>
@@ -683,6 +694,7 @@ body{
 <div class="date-line">11월 11일 (수)</div>
 <h2>로토루아 · 지열 + 호비튼</h2>
 <p>4명 · 로토루아 2박째</p>
+<div class="day-stay"><span>🌙 오늘 숙박</span><strong>로토루아 · 2/2박</strong></div>
 </div>
 </div>
 <div class="map-shell" data-map-index="8"><div class="travel-map" role="region" aria-label="9일차 지도"></div><p class="map-status" role="status">지도를 불러오는 중…</p></div><div class="map-legend">● 방문 장소를 누르면 이름 표시  ·  ┄ 직선 이동 순서</div>
@@ -741,6 +753,7 @@ body{
 <div class="date-line">11월 12일 (목)</div>
 <h2>로토루아 → 와이토모 → 오클랜드</h2>
 <p>4명 · 반딧불 동굴 · Bayview 입성</p>
+<div class="day-stay"><span>🌙 오늘 숙박</span><strong>오클랜드 Bayview · 친척집 · 1/2박</strong></div>
 </div>
 </div>
 <div class="map-shell" data-map-index="9"><div class="travel-map" role="region" aria-label="10일차 지도"></div><p class="map-status" role="status">지도를 불러오는 중…</p></div><div class="map-legend">● 방문 장소를 누르면 이름 표시  ·  ┄ 직선 이동 순서</div>
@@ -798,6 +811,7 @@ body{
 <div class="date-line">11월 13일 (금)</div>
 <h2>오클랜드 자유일</h2>
 <p>4명 · 쇼핑 + 선택 일정</p>
+<div class="day-stay"><span>🌙 오늘 숙박</span><strong>오클랜드 Bayview · 친척집 · 2/2박</strong></div>
 </div>
 </div>
 <div class="map-shell" data-map-index="10"><div class="travel-map" role="region" aria-label="11일차 지도"></div><p class="map-status" role="status">지도를 불러오는 중…</p></div><div class="map-legend">● 방문 장소를 누르면 이름 표시  ·  ┄ 직선 이동 순서</div>
@@ -856,6 +870,7 @@ body{
 <div class="date-line">11월 14일 (토)</div>
 <h2>오클랜드 → 인천</h2>
 <p>4명 · 귀국</p>
+<div class="day-stay"><span>🌙 오늘 숙박</span><strong>귀국 · 숙박 없음</strong></div>
 </div>
 </div>
 <div class="map-shell" data-map-index="11"><div class="travel-map" role="region" aria-label="12일차 지도"></div><p class="map-status" role="status">지도를 불러오는 중…</p></div><div class="map-legend">● 방문 장소를 누르면 이름 표시  ·  ┄ 직선 이동 순서</div>
