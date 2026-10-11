@@ -202,7 +202,14 @@ body{
 }
 </style><link rel="stylesheet" href="vendor/leaflet.css"/>
 <link rel="stylesheet" href="maps.css"/>
-</head>
+<style>
+/* Place arrival and duration below the description so mobile text stays readable. */
+.stop{grid-template-columns:38px minmax(0,1fr)}
+.stop-time{grid-column:2;text-align:left;white-space:normal;display:flex;flex-wrap:wrap;gap:4px 12px;font-size:12px;line-height:1.6}
+.stop-time strong{color:#284d3d}
+.stop-time span{color:#59635d;font-weight:500}
+.timing-note{font-size:12px!important;line-height:1.7;color:#59635d;background:#f0f4ef;padding:10px 12px;border-radius:10px;margin:10px 0}
+</style></head>
 <body>
 <div class="page">
 <header class="hero">
@@ -228,7 +235,7 @@ body{
 </nav>
 <div class="main-panels">
 <section class="main-panel m1">
-<div class="section-head"><h2>날짜별 일정</h2><p>날짜를 누르면 해당 날만 보여.</p></div>
+<div class="section-head"><h2>날짜별 일정</h2><p>날짜를 누르면 해당 날만 보여.</p><p class="timing-note">시간은 현지시간 기준 계획용 가안입니다. 도착·체류시간은 교통·휴식·날씨에 따라 달라지며, 항공권과 투어 예약 시간이 우선입니다.</p></div>
 <input checked="" class="day-radio" id="day1" name="daytab" type="radio"/><input class="day-radio" id="day2" name="daytab" type="radio"/><input class="day-radio" id="day3" name="daytab" type="radio"/><input class="day-radio" id="day4" name="daytab" type="radio"/><input class="day-radio" id="day5" name="daytab" type="radio"/><input class="day-radio" id="day6" name="daytab" type="radio"/><input class="day-radio" id="day7" name="daytab" type="radio"/><input class="day-radio" id="day8" name="daytab" type="radio"/><input class="day-radio" id="day9" name="daytab" type="radio"/><input class="day-radio" id="day10" name="daytab" type="radio"/><input class="day-radio" id="day11" name="daytab" type="radio"/><input class="day-radio" id="day12" name="daytab" type="radio"/>
 <nav class="date-tabs"><label for="day1">11/3</label><label for="day2">11/4</label><label for="day3">11/5</label><label for="day4">11/6</label><label for="day5">11/7</label><label for="day6">11/8</label><label for="day7">11/9</label><label for="day8">11/10</label><label for="day9">11/11</label><label for="day10">11/12</label><label for="day11">11/13</label><label for="day12">11/14</label></nav>
 <div class="day-panels">
@@ -248,34 +255,23 @@ body{
 <div class="leg-icon">✈️</div>
 <div><b>ICN → AKL</b><span>약 11시간 30분</span></div>
 </div></div>
-<div class="subhead">TODAY</div>
+<p class="timing-note">항공 시각은 기존 일정표 기준이며 예약 확정 여부는 확인 전입니다.</p>
+<div class="subhead">TODAY · 예상 도착 / 체류시간</div>
 <div class="stops"><div class="stop">
 <div class="stop-no">1</div>
 <div class="stop-copy">
 <b>✈️ 인천 국제공항</b>
 <span>KE411 탑승 · 뉴질랜드로 출발</span>
 </div>
-<div class="stop-time">18:25</div>
+<div class="stop-time"><strong>공항 도착 목표 15:00</strong><span>출발 전 약 3시간 25분</span></div>
 </div><div class="stop">
 <div class="stop-no">2</div>
 <div class="stop-copy">
 <b>🌙 장거리 비행</b>
 <span>수면 위주 · 다음 날 아침 오클랜드 도착</span>
 </div>
-<div class="stop-time">기내</div>
+<div class="stop-time"><strong>기존 출발 18:25</strong><span>기내 숙박 · 항공권 확인</span></div>
 </div></div>
-<div class="next-card">
-<div class="next-kicker">NEXT · 11/4</div>
-<div class="next-main">
-<div class="sleep-dot">🌙</div>
-<div class="next-copy">
-<span>오늘 숙박 · 기내</span>
-<b>Auckland 도착 → 국내선 환승 → Christchurch</b>
-<small>AKL→CHC 약 1시간 25분</small>
-</div>
-<div class="next-arrow">→</div>
-</div>
-</div>
 </section>
 <section class="day-panel dp2">
 <div class="day-summary">
@@ -291,47 +287,36 @@ body{
 <div class="subhead">이동 구간 · 예상시간</div>
 <div class="legs"><div class="leg">
 <div class="leg-icon">✈️</div>
-<div><b>AKL → CHC</b><span>약 1시간 25분</span></div>
+<div><b>AKL → CHC · 젯스타</b><span>13:15 → 14:40 · 1시간 25분 · 예약 완료</span></div>
 </div><div class="leg">
 <div class="leg-icon">🚗</div>
 <div><b>CHC 공항 → 시내</b><span>약 20~25분</span></div>
 </div></div>
-<div class="subhead">TODAY</div>
+<p class="timing-note">오클랜드→크라이스트처치: 젯스타 13:15 출발 → 14:40 도착 · 예약 완료 · 현지시간. 이후 렌터카·체크인·식사 시간은 예상입니다. 기존 국제선 도착 09:55 기준 출발까지 3시간 20분이며, 입국·검역·국내선 이동·수하물 수속이 필요합니다.</p>
+<div class="subhead">TODAY · 예상 도착 / 체류시간</div>
 <div class="stops"><div class="stop">
 <div class="stop-no">1</div>
 <div class="stop-copy">
 <b>🛬 오클랜드 도착</b>
 <span>입국 · 검역 · 국내선 환승</span>
 </div>
-<div class="stop-time">09:55</div>
+<div class="stop-time"><strong>기존 도착 09:55</strong><span>입국·환승 · 젯스타 출발까지 3시간 20분</span></div>
 </div><div class="stop">
 <div class="stop-no">2</div>
 <div class="stop-copy">
 <b>🏙️ 크라이스트처치</b>
 <span>렌터카 픽업 · 체크인</span>
 </div>
-<div class="stop-time">오후</div>
+<div class="stop-time"><strong>공항 도착 14:40 · 예약 완료</strong><span>짐 수령·렌터카・숙소 이동 약 1.5~2시간 · 체크인 16:15~16:45 예상</span></div>
 </div><div class="stop">
 <div class="stop-no">3</div>
 <div class="stop-copy">
 <b>🍚 장보기 + 저녁</b>
 <span>아시아 마트 · 한식/아시아식 위주</span>
 </div>
-<div class="stop-time">저녁</div>
+<div class="stop-time"><strong>예상 시작 17:00~17:30</strong><span>장보기·저녁 약 2시간 · 이후 휴식</span></div>
 </div></div>
 <div class="subhead">OPTION</div><div class="chips"><span class="chip">＋ 가벼운 시내 산책</span><span class="chip">＋ 아시아 마트 먼저 가기</span></div>
-<div class="next-card">
-<div class="next-kicker">NEXT · 11/5</div>
-<div class="next-main">
-<div class="sleep-dot">🌙</div>
-<div class="next-copy">
-<span>오늘 숙박 · Christchurch</span>
-<b>Christchurch → Lake Tekapo</b>
-<small>약 3시간</small>
-</div>
-<div class="next-arrow">→</div>
-</div>
-</div>
 </section>
 <section class="day-panel dp3">
 <div class="day-summary">
@@ -352,42 +337,31 @@ body{
 <div class="leg-icon">🚗</div>
 <div><b>Tekapo 마을 → 교회</b><span>약 5분</span></div>
 </div></div>
-<div class="subhead">TODAY</div>
+<p class="timing-note">캐슬힐은 포함하지 않은 직행 기준입니다. 별보기는 날씨와 예약 시간에 맞춥니다.</p>
+<div class="subhead">TODAY · 예상 도착 / 체류시간</div>
 <div class="stops"><div class="stop">
 <div class="stop-no">1</div>
 <div class="stop-copy">
 <b>🚗 크라이스트처치 출발</b>
 <span>렌터카로 남섬 로드트립 시작</span>
 </div>
-<div class="stop-time">오전</div>
+<div class="stop-time"><strong>출발 목표 09:00</strong><span>운전·중간 휴식 약 3~4시간</span></div>
 </div><div class="stop">
 <div class="stop-no">2</div>
 <div class="stop-copy">
 <b>🌊 레이크 테카포</b>
 <span>호숫가 산책 · 선한 목자의 교회</span>
 </div>
-<div class="stop-time">오후</div>
+<div class="stop-time"><strong>예상 도착 13:00</strong><span>점심·산책 약 2~3시간</span></div>
 </div><div class="stop">
 <div class="stop-no">3</div>
 <div class="stop-copy">
 <b>✨ 별보기</b>
 <span>날씨 좋으면 별보기 투어 또는 자유 관측</span>
 </div>
-<div class="stop-time">밤</div>
+<div class="stop-time"><strong>해가 진 뒤 · 예약에 맞춤</strong><span>자유 관측 약 1시간 / 투어별 상이</span></div>
 </div></div>
 <div class="subhead">OPTION</div><div class="chips"><span class="chip">＋ 별보기 투어</span><span class="chip">＋ 자유 별관측</span></div>
-<div class="next-card">
-<div class="next-kicker">NEXT · 11/6</div>
-<div class="next-main">
-<div class="sleep-dot">🌙</div>
-<div class="next-copy">
-<span>오늘 숙박 · Lake Tekapo</span>
-<b>Tekapo → Pukaki → Mount Cook</b>
-<small>Pukaki까지 약 40분</small>
-</div>
-<div class="next-arrow">→</div>
-</div>
-</div>
 </section>
 <section class="day-panel dp4">
 <div class="day-summary">
@@ -411,414 +385,87 @@ body{
 <div class="leg-icon">🥾</div>
 <div><b>Hooker Valley 왕복</b><span>약 3시간</span></div>
 </div></div>
-<div class="subhead">TODAY</div>
+<p class="timing-note">후커밸리 등 산책 코스는 출발 전 개방 구간·날씨·컨디션을 확인하고 선택합니다.</p>
+<div class="subhead">TODAY · 예상 도착 / 체류시간</div>
 <div class="stops"><div class="stop">
 <div class="stop-no">1</div>
 <div class="stop-copy">
 <b>🚗 테카포 출발</b>
 <span>푸카키 방향으로 이동</span>
 </div>
-<div class="stop-time">아침</div>
+<div class="stop-time"><strong>출발 목표 09:00</strong><span>푸카키까지 약 45분~1시간</span></div>
 </div><div class="stop">
 <div class="stop-no">2</div>
 <div class="stop-copy">
 <b>🐟 레이크 푸카키</b>
 <span>풍경 + 연어 식사</span>
 </div>
-<div class="stop-time">점심</div>
+<div class="stop-time"><strong>예상 도착 10:00</strong><span>풍경·이른 점심 약 1~1.5시간</span></div>
 </div><div class="stop">
 <div class="stop-no">3</div>
 <div class="stop-copy">
 <b>🥾 후커밸리 · 마운트쿡</b>
 <span>후커밸리 왕복 후 마운트쿡 숙박 · 추가 장거리 운전 없음</span>
 </div>
-<div class="stop-time">오후~저녁</div>
+<div class="stop-time"><strong>예상 도착 12:30</strong><span>산책·트레킹 약 2~4시간 · 코스별 조정</span></div>
 </div></div>
 <div class="subhead">OPTION</div><div class="chips"><span class="chip">＋ 후커밸리 전체 왕복</span><span class="chip">＋ 컨디션 따라 중간 반환</span></div>
-<div class="next-card">
-<div class="next-kicker">NEXT · 11/7</div>
-<div class="next-main">
-<div class="sleep-dot">🌙</div>
-<div class="next-copy">
-<span>오늘 숙박 · Mount Cook</span>
-<b>Mount Cook → Wanaka → Queenstown</b>
-<small>Wanaka까지 약 2시간 30분</small>
-</div>
-<div class="next-arrow">→</div>
-</div>
-</div>
 </section>
 <section class="day-panel dp5">
-<div class="day-summary">
-<div>
-<div class="date-line">11월 7일 (토)</div>
-<h2>마운트쿡 → 트와이젤 → 와나카 → 퀸스타운</h2>
-<p>트와이젤에서 30분~1시간 휴식 · 오후부터 4명 · 동생 합류 🎉</p>
-<div class="day-stay"><span>🌙 오늘 숙박</span><strong>퀸스타운 · 1/3박</strong></div>
-</div>
-</div>
-<div class="map-shell" data-map-index="4"><div class="travel-map" role="region" aria-label="5일차 지도"></div><p class="map-status" role="status">지도를 불러오는 중…</p></div><div class="map-legend">● 방문 장소를 누르면 이름 표시  ·  ┄ 직선 이동 순서</div>
-<div class="map-help">두 손가락으로 확대·축소 · 한 손가락으로 이동 · ＋/− 버튼으로 확대·축소</div>
-<div class="subhead">이동 구간 · 예상시간</div>
-<div class="legs"><div class="leg">
-<div class="leg-icon">🚗</div>
-<div><b>Mt Cook → Twizel → Wanaka</b><span>기존 예상 운전 약 2시간 30분 · 경유 휴식 별도</span></div>
-</div><div class="leg">
-<div class="leg-icon">🚗</div>
-<div><b>Wanaka → Queenstown</b><span>약 1시간 20분</span></div>
-</div><div class="leg">
-<div class="leg-icon">🚗</div>
-<div><b>ZQN → Queenstown</b><span>약 15~20분</span></div>
-</div></div>
-<div class="subhead">TODAY</div>
-<div class="stops"><div class="stop">
-<div class="stop-no">1</div>
-<div class="stop-copy">
-<b>🚗 마운트쿡 출발</b>
-<span>트와이젤 경유 · 와나카 방향 이동</span>
-</div>
-<div class="stop-time">오전</div>
-</div><div class="stop">
-<div class="stop-no">2</div>
-<div class="stop-copy">
-<b>☕ 트와이젤 · 쉬어가기</b>
-<span>점심·커피·장보기 · 별도 숙박 없이 경유</span>
-</div>
-<div class="stop-time">30분~1시간</div>
-</div><div class="stop">
-<div class="stop-no">3</div>
-<div class="stop-copy">
-<b>🌊 와나카</b>
-<span>호숫가 산책 · 동생 도착 시간에 맞춰 출발</span>
-</div>
-<div class="stop-time">점심 이후</div>
-</div><div class="stop">
-<div class="stop-no">4</div>
-<div class="stop-copy">
-<b>🎉 퀸스타운 공항</b>
-<span>동생 합류</span>
-</div>
-<div class="stop-time">오후</div>
-</div><div class="stop">
-<div class="stop-no">5</div>
-<div class="stop-copy">
-<b>🏨 퀸스타운</b>
-<span>체크인 · 호숫가 · 저녁</span>
-</div>
-<div class="stop-time">저녁</div>
-</div></div>
-<div class="subhead">OPTION</div><div class="chips"><span class="chip">＋ Skyline 곤돌라</span><span class="chip">＋ 그냥 호숫가 + 저녁</span></div>
-<div class="next-card">
-<div class="next-kicker">NEXT · 11/8</div>
-<div class="next-main">
-<div class="sleep-dot">🌙</div>
-<div class="next-copy">
-<span>오늘 숙박 · Queenstown</span>
-<b>Queenstown → Milford Sound → Queenstown</b>
-<small>코치 이동 시 편도 약 5시간</small>
-</div>
-<div class="next-arrow">→</div>
-</div>
-</div>
-</section>
+<div class="day-summary"><div><div class="date-line">11월 7일 (토)</div><h2>마운트쿡 → 트와이젤 → 와나카</h2><p>와나카 1박 · 동생은 공항에서 셔틀로 이동</p><div class="day-stay"><span>🌙 오늘 숙박</span><strong>와나카</strong></div></div></div>
+<div class="map-shell" data-map-index="4"><div class="travel-map" role="region" aria-label="5일차 지도"></div><p class="map-status" role="status">지도를 불러오는 중…</p></div><div class="map-legend">번호는 지도상 장소 순서 · 점선은 실제 도로가 아닌 이동 방향 · 선택 코스는 모두 방문하지 않음</div><div class="map-help">두 손가락 확대·축소 · 한 손가락 이동 · ＋/− 버튼</div>
+<p class="timing-note">동생 항공편은 퀸스타운 공항 14:20 도착 예정. 와나카행 셔틀 배차·좌석은 미확정이며, 연결 확인 후 합류 시간을 확정합니다.</p><div class="subhead">TODAY · 예상 도착 / 체류시간</div><div class="stops"><div class="stop"><div class="stop-no">1</div><div class="stop-copy"><b>🚗 마운트쿡 출발</b><span>트와이젤 경유</span></div><div class="stop-time"><strong>출발 목표 09:00</strong><span>운전·휴식 포함 와나카까지 약 3~4시간</span></div></div>
+<div class="stop"><div class="stop-no">2</div><div class="stop-copy"><b>☕ 트와이젤</b><span>커피·장보기·휴식</span></div><div class="stop-time"><strong>예상 도착 10:00</strong><span>30분~1시간</span></div></div>
+<div class="stop"><div class="stop-no">3</div><div class="stop-copy"><b>🌊 와나카</b><span>점심·호숫가 산책·체크인</span></div><div class="stop-time"><strong>예상 도착 12:30~13:00</strong><span>오후 관광·휴식 약 3시간</span></div></div>
+<div class="stop"><div class="stop-no">4</div><div class="stop-copy"><b>🎉 동생 와나카 합류</b><span>공항→와나카 셔틀 별도 예약 필요</span></div><div class="stop-time"><strong>공항 도착 14:20 · 와나카 도착 미정</strong><span>셔틀 이동 약 1시간 15분~1시간 50분 · 대기 별도</span></div></div>
+<div class="stop"><div class="stop-no">5</div><div class="stop-copy"><b>🍽️ 와나카 저녁</b><span>가족 저녁·호숫가 산책</span></div><div class="stop-time"><strong>합류 후</strong><span>약 1~2시간 / 숙박</span></div></div>
+</div></section>
 <section class="day-panel dp6">
-<div class="day-summary">
-<div>
-<div class="date-line">11월 8일 (일)</div>
-<h2>밀포드 사운드</h2>
-<p>4명 · 남섬 핵심 일정 · 날씨 중요</p>
-<div class="day-stay"><span>🌙 오늘 숙박</span><strong>퀸스타운 · 2/3박</strong></div>
-</div>
-</div>
-<div class="map-shell" data-map-index="5"><div class="travel-map" role="region" aria-label="6일차 지도"></div><p class="map-status" role="status">지도를 불러오는 중…</p></div><div class="map-legend">● 방문 장소를 누르면 이름 표시  ·  ┄ 직선 이동 순서</div>
-<div class="map-help">두 손가락으로 확대·축소 · 한 손가락으로 이동 · ＋/− 버튼으로 확대·축소</div>
-<div class="subhead">이동 구간 · 예상시간</div>
-<div class="legs"><div class="leg">
-<div class="leg-icon">🚌</div>
-<div><b>Queenstown → Milford</b><span>도로 약 4시간 / 투어 코치 약 5시간</span></div>
-</div><div class="leg">
-<div class="leg-icon">🚢</div>
-<div><b>Milford 크루즈</b><span>약 1시간 45분~2시간</span></div>
-</div><div class="leg">
-<div class="leg-icon">✈️</div>
-<div><b>Milford → Queenstown</b><span>비행 시 약 35~40분</span></div>
-</div></div>
-<div class="subhead">TODAY</div>
-<div class="stops"><div class="stop">
-<div class="stop-no">1</div>
-<div class="stop-copy">
-<b>🚌 퀸스타운 출발</b>
-<span>코치 또는 비행 옵션</span>
-</div>
-<div class="stop-time">이른 아침</div>
-</div><div class="stop">
-<div class="stop-no">2</div>
-<div class="stop-copy">
-<b>🚢 밀포드 사운드</b>
-<span>피오르드 크루즈</span>
-</div>
-<div class="stop-time">낮</div>
-</div><div class="stop">
-<div class="stop-no">3</div>
-<div class="stop-copy">
-<b>🏨 퀸스타운 복귀</b>
-<span>선택한 이동 방식에 따라 귀환 시간 차이</span>
-</div>
-<div class="stop-time">저녁</div>
-</div></div>
-<div class="subhead">OPTION</div><div class="chips"><span class="chip">＋ Coach + Cruise</span><span class="chip">＋ Coach + Cruise + Fly</span><span class="chip">＋ Fly + Cruise + Fly</span></div>
-<div class="next-card">
-<div class="next-kicker">NEXT · 11/9</div>
-<div class="next-main">
-<div class="sleep-dot">🌙</div>
-<div class="next-copy">
-<span>오늘 숙박 · Queenstown</span>
-<b>Queenstown 여유일</b>
-<small>Arrowtown 약 20~25분</small>
-</div>
-<div class="next-arrow">→</div>
-</div>
-</div>
-</section>
+<div class="day-summary"><div><div class="date-line">11월 8일 (일)</div><h2>와나카 → 퀸스타운</h2><p>오전 와나카 · 오후 퀸스타운 관광</p><div class="day-stay"><span>🌙 오늘 숙박</span><strong>퀸스타운 · 1/2박</strong></div></div></div>
+<div class="map-shell" data-map-index="5"><div class="travel-map" role="region" aria-label="6일차 지도"></div><p class="map-status" role="status">지도를 불러오는 중…</p></div><div class="map-legend">번호는 지도상 장소 순서 · 점선은 실제 도로가 아닌 이동 방향 · 선택 코스는 모두 방문하지 않음</div><div class="map-help">두 손가락 확대·축소 · 한 손가락 이동 · ＋/− 버튼</div>
+<p class="timing-note">곤돌라·루지 또는 유람선 중 한 가지를 선택합니다. 관광·이동 시간은 가안이며 숙소 체크인 시간에 맞춥니다.</p><div class="subhead">TODAY · 예상 도착 / 체류시간</div><div class="stops"><div class="stop"><div class="stop-no">1</div><div class="stop-copy"><b>🌊 와나카 아침</b><span>아침 식사·호숫가 산책</span></div><div class="stop-time"><strong>시작 목표 08:30</strong><span>약 1~1.5시간</span></div></div>
+<div class="stop"><div class="stop-no">2</div><div class="stop-copy"><b>🚗 퀸스타운 이동</b><span>체크아웃 후 이동</span></div><div class="stop-time"><strong>출발 목표 10:00~11:00</strong><span>운전 약 1~1.5시간</span></div></div>
+<div class="stop"><div class="stop-no">3</div><div class="stop-copy"><b>🏙️ 퀸스타운</b><span>점심·숙소에 짐 맡기기</span></div><div class="stop-time"><strong>예상 도착 11:30~12:30</strong><span>약 1~1.5시간</span></div></div>
+<div class="stop"><div class="stop-no">4</div><div class="stop-copy"><b>🚡 선택 활동</b><span>Skyline 곤돌라·루지 또는 TSS Earnslaw 중 하나</span></div><div class="stop-time"><strong>시작 목표 14:00</strong><span>약 2~3시간 · 예약별 조정</span></div></div>
+<div class="stop"><div class="stop-no">5</div><div class="stop-copy"><b>🌅 호숫가·저녁</b><span>체크인·산책·저녁 후 휴식</span></div><div class="stop-time"><strong>17:00 이후</strong><span>약 2시간 / 숙박</span></div></div>
+</div></section>
 <section class="day-panel dp7">
-<div class="day-summary">
-<div>
-<div class="date-line">11월 9일 (월)</div>
-<h2>퀸스타운 여유일</h2>
-<p>4명 · 컨디션 따라 선택</p>
-<div class="day-stay"><span>🌙 오늘 숙박</span><strong>퀸스타운 · 3/3박</strong></div>
-</div>
-</div>
-<div class="map-shell" data-map-index="6"><div class="travel-map" role="region" aria-label="7일차 지도"></div><p class="map-status" role="status">지도를 불러오는 중…</p></div><div class="map-legend">● 방문 장소를 누르면 이름 표시  ·  ┄ 직선 이동 순서</div>
-<div class="map-help">두 손가락으로 확대·축소 · 한 손가락으로 이동 · ＋/− 버튼으로 확대·축소</div>
-<div class="subhead">이동 구간 · 예상시간</div>
-<div class="legs"><div class="leg">
-<div class="leg-icon">🚗</div>
-<div><b>Queenstown → Arrowtown</b><span>약 20~25분</span></div>
-</div><div class="leg">
-<div class="leg-icon">🚗</div>
-<div><b>Arrowtown → Onsen</b><span>약 15~20분</span></div>
-</div><div class="leg">
-<div class="leg-icon">🚗</div>
-<div><b>Onsen → Queenstown</b><span>약 10분</span></div>
-</div></div>
-<div class="subhead">TODAY</div>
-<div class="stops"><div class="stop">
-<div class="stop-no">1</div>
-<div class="stop-copy">
-<b>🏘️ 애로우타운</b>
-<span>산책 + 브런치</span>
-</div>
-<div class="stop-time">오전</div>
-</div><div class="stop">
-<div class="stop-no">2</div>
-<div class="stop-copy">
-<b>🍷 선택 일정</b>
-<span>와이너리 / Skyline / TSS Earnslaw</span>
-</div>
-<div class="stop-time">오후</div>
-</div><div class="stop">
-<div class="stop-no">3</div>
-<div class="stop-copy">
-<b>♨️ Onsen Hot Pools</b>
-<span>온천 후보</span>
-</div>
-<div class="stop-time">저녁</div>
-</div></div>
-<div class="subhead">OPTION</div><div class="chips"><span class="chip">＋ Central Otago Winery</span><span class="chip">＋ Skyline + Luge</span><span class="chip">＋ TSS Earnslaw</span><span class="chip">＋ Onsen</span></div>
-<div class="next-card">
-<div class="next-kicker">NEXT · 11/10</div>
-<div class="next-main">
-<div class="sleep-dot">🌙</div>
-<div class="next-copy">
-<span>오늘 숙박 · Queenstown</span>
-<b>Queenstown → Auckland → Rotorua</b>
-<small>비행 약 1시간 50분 + 운전 약 3시간</small>
-</div>
-<div class="next-arrow">→</div>
-</div>
-</div>
-</section>
+<div class="day-summary"><div><div class="date-line">11월 9일 (월)</div><h2>퀸스타운 ↔ 밀포드사운드</h2><p>코치＋크루즈 당일치기 가안</p><div class="day-stay"><span>🌙 오늘 숙박</span><strong>퀸스타운 · 2/2박</strong></div></div></div>
+<div class="map-shell" data-map-index="6"><div class="travel-map" role="region" aria-label="7일차 지도"></div><p class="map-status" role="status">지도를 불러오는 중…</p></div><div class="map-legend">번호는 지도상 장소 순서 · 점선은 실제 도로가 아닌 이동 방향 · 선택 코스는 모두 방문하지 않음</div><div class="map-help">두 손가락 확대·축소 · 한 손가락 이동 · ＋/− 버튼</div>
+<p class="timing-note">예약 업체의 픽업·승선·귀환 시간이 우선입니다. 다음 날 북섬 항공편은 미정입니다.</p><div class="subhead">TODAY · 예상 도착 / 체류시간</div><div class="stops"><div class="stop"><div class="stop-no">1</div><div class="stop-copy"><b>🚌 퀸스타운 출발</b><span>코치 이동·경유지 정차</span></div><div class="stop-time"><strong>06:30~07:30 가안</strong><span>약 5시간 · 정차 포함</span></div></div>
+<div class="stop"><div class="stop-no">2</div><div class="stop-copy"><b>🚢 밀포드사운드</b><span>피오르드 크루즈</span></div><div class="stop-time"><strong>12:00~13:00 도착 가안</strong><span>승선 대기·크루즈 약 2~2.5시간</span></div></div>
+<div class="stop"><div class="stop-no">3</div><div class="stop-copy"><b>🏨 퀸스타운 복귀</b><span>저녁·휴식</span></div><div class="stop-time"><strong>19:00~20:30 복귀 가안</strong><span>숙박</span></div></div>
+</div></section>
 <section class="day-panel dp8">
-<div class="day-summary">
-<div>
-<div class="date-line">11월 10일 (화)</div>
-<h2>퀸스타운 → 오클랜드 → 로토루아</h2>
-<p>4명 · 북섬 시작 · 로토루아 1박째</p>
-<div class="day-stay"><span>🌙 오늘 숙박</span><strong>로토루아 · 1/2박</strong></div>
-</div>
-</div>
-<div class="map-shell" data-map-index="7"><div class="travel-map" role="region" aria-label="8일차 지도"></div><p class="map-status" role="status">지도를 불러오는 중…</p></div><div class="map-legend">● 방문 장소를 누르면 이름 표시  ·  ┄ 직선 이동 순서</div>
-<div class="map-help">두 손가락으로 확대·축소 · 한 손가락으로 이동 · ＋/− 버튼으로 확대·축소</div>
-<div class="subhead">이동 구간 · 예상시간</div>
-<div class="legs"><div class="leg">
-<div class="leg-icon">✈️</div>
-<div><b>ZQN → AKL</b><span>약 1시간 50분</span></div>
-</div><div class="leg">
-<div class="leg-icon">🚗</div>
-<div><b>AKL → Rotorua</b><span>약 3시간</span></div>
-</div></div>
-<div class="subhead">TODAY</div>
-<div class="stops"><div class="stop">
-<div class="stop-no">1</div>
-<div class="stop-copy">
-<b>✈️ 퀸스타운 출발</b>
-<span>국내선으로 오클랜드 이동</span>
-</div>
-<div class="stop-time">오전</div>
-</div><div class="stop">
-<div class="stop-no">2</div>
-<div class="stop-copy">
-<b>🚗 오클랜드 공항</b>
-<span>북섬 렌터카 픽업</span>
-</div>
-<div class="stop-time">오후</div>
-</div><div class="stop">
-<div class="stop-no">3</div>
-<div class="stop-copy">
-<b>♨️ 로토루아</b>
-<span>온천 또는 숙소 휴식</span>
-</div>
-<div class="stop-time">저녁</div>
-</div></div>
-<div class="subhead">OPTION</div><div class="chips"><span class="chip">＋ 온천만 하고 휴식</span><span class="chip">＋ 저녁 산책</span></div>
-<div class="next-card">
-<div class="next-kicker">NEXT · 11/11</div>
-<div class="next-main">
-<div class="sleep-dot">🌙</div>
-<div class="next-copy">
-<span>오늘 숙박 · Rotorua</span>
-<b>Rotorua → Te Puia → Hobbiton</b>
-<small>Te Puia까지 약 10분</small>
-</div>
-<div class="next-arrow">→</div>
-</div>
-</div>
-</section>
+<div class="day-summary"><div><div class="date-line">11월 10일 (화)</div><h2>퀸스타운 → 오클랜드 → 친척집</h2><p>북섬 시작 · Bayview에서 4박</p><div class="day-stay"><span>🌙 오늘 숙박</span><strong>오클랜드 Bayview · 친척집 · 1/4박</strong></div></div></div>
+<div class="map-shell" data-map-index="7"><div class="travel-map" role="region" aria-label="8일차 지도"></div><p class="map-status" role="status">지도를 불러오는 중…</p></div><div class="map-legend">번호는 지도상 장소 순서 · 점선은 실제 도로가 아닌 이동 방향 · 선택 코스는 모두 방문하지 않음</div><div class="map-help">두 손가락 확대·축소 · 한 손가락 이동 · ＋/− 버튼</div>
+<p class="timing-note">국내선은 미예약·시간 미정입니다. 로토루아로 이동하지 않고 친척집에서 쉽니다.</p><div class="subhead">TODAY · 예상 도착 / 체류시간</div><div class="stops"><div class="stop"><div class="stop-no">1</div><div class="stop-copy"><b>✈️ 퀸스타운 출발</b><span>렌터카 반납·국내선 탑승</span></div><div class="stop-time"><strong>항공편 미정</strong><span>예약 후 반납·수속 시간 조정</span></div></div>
+<div class="stop"><div class="stop-no">2</div><div class="stop-copy"><b>🛬 오클랜드 공항</b><span>짐 수령·필요 시 렌터카 픽업</span></div><div class="stop-time"><strong>항공편 도착 후</strong><span>약 1~1.5시간 예상</span></div></div>
+<div class="stop"><div class="stop-no">3</div><div class="stop-copy"><b>🏠 Bayview 친척집</b><span>친척 인사·식사·휴식</span></div><div class="stop-time"><strong>도착 시각은 항공편에 따라</strong><span>친척집 숙박</span></div></div>
+</div></section>
 <section class="day-panel dp9">
-<div class="day-summary">
-<div>
-<div class="date-line">11월 11일 (수)</div>
-<h2>로토루아 · 지열 + 호비튼</h2>
-<p>4명 · 로토루아 2박째</p>
-<div class="day-stay"><span>🌙 오늘 숙박</span><strong>로토루아 · 2/2박</strong></div>
-</div>
-</div>
-<div class="map-shell" data-map-index="8"><div class="travel-map" role="region" aria-label="9일차 지도"></div><p class="map-status" role="status">지도를 불러오는 중…</p></div><div class="map-legend">● 방문 장소를 누르면 이름 표시  ·  ┄ 직선 이동 순서</div>
-<div class="map-help">두 손가락으로 확대·축소 · 한 손가락으로 이동 · ＋/− 버튼으로 확대·축소</div>
-<div class="subhead">이동 구간 · 예상시간</div>
-<div class="legs"><div class="leg">
-<div class="leg-icon">🚗</div>
-<div><b>Rotorua → Te Puia</b><span>약 10분</span></div>
-</div><div class="leg">
-<div class="leg-icon">🚗</div>
-<div><b>Te Puia → Hobbiton</b><span>약 1시간</span></div>
-</div><div class="leg">
-<div class="leg-icon">🚗</div>
-<div><b>Hobbiton → Rotorua</b><span>약 1시간</span></div>
-</div></div>
-<div class="subhead">TODAY</div>
-<div class="stops"><div class="stop">
-<div class="stop-no">1</div>
-<div class="stop-copy">
-<b>🌋 Te Puia</b>
-<span>지열지대 + 마오리 문화</span>
-</div>
-<div class="stop-time">오전</div>
-</div><div class="stop">
-<div class="stop-no">2</div>
-<div class="stop-copy">
-<b>🏡 Hobbiton Movie Set</b>
-<span>호빗마을 투어</span>
-</div>
-<div class="stop-time">오후</div>
-</div><div class="stop">
-<div class="stop-no">3</div>
-<div class="stop-copy">
-<b>🏨 로토루아 복귀</b>
-<span>같은 숙소 2박째</span>
-</div>
-<div class="stop-time">저녁</div>
-</div></div>
-<div class="subhead">OPTION</div><div class="chips"><span class="chip">＋ Te Puia 기본 투어</span><span class="chip">＋ 마오리 문화 공연 포함</span></div>
-<div class="next-card">
-<div class="next-kicker">NEXT · 11/12</div>
-<div class="next-main">
-<div class="sleep-dot">🌙</div>
-<div class="next-copy">
-<span>오늘 숙박 · Rotorua</span>
-<b>Rotorua → Waitomo → Auckland / Bayview</b>
-<small>Waitomo까지 약 2시간</small>
-</div>
-<div class="next-arrow">→</div>
-</div>
-</div>
-</section>
+<div class="day-summary"><div><div class="date-line">11월 11일 (수)</div><h2>친척집 → 호비튼 → 블루스프링 → 친척집</h2><p>두 곳만 방문하는 당일치기</p><div class="day-stay"><span>🌙 오늘 숙박</span><strong>오클랜드 Bayview · 친척집 · 2/4박</strong></div></div></div>
+<div class="map-shell" data-map-index="8"><div class="travel-map" role="region" aria-label="9일차 지도"></div><p class="map-status" role="status">지도를 불러오는 중…</p></div><div class="map-legend">번호는 지도상 장소 순서 · 점선은 실제 도로가 아닌 이동 방향 · 선택 코스는 모두 방문하지 않음</div><div class="map-help">두 손가락 확대·축소 · 한 손가락 이동 · ＋/− 버튼</div>
+<p class="timing-note">장거리 운전일입니다. 아래 시간은 계획용 가안이며 호비튼 예약 시간에 맞춰 순서를 조정합니다. 블루스프링은 Leslie Road 입구의 짧은 구간을 이용하고 출발 전 개방·주차 상황을 확인합니다.</p><div class="subhead">TODAY · 예상 도착 / 체류시간</div><div class="stops"><div class="stop"><div class="stop-no">1</div><div class="stop-copy"><b>🚗 Bayview 출발</b><span>교통·휴식 시간을 넉넉히 확보</span></div><div class="stop-time"><strong>출발 목표 07:00</strong><span>호비튼까지 약 3~3.5시간 배정 · 교통에 따라</span></div></div>
+<div class="stop"><div class="stop-no">2</div><div class="stop-copy"><b>🏡 호비튼</b><span>투어 미예약 · 체크인 후 참여</span></div><div class="stop-time"><strong>도착 목표 10:00 · 투어 10:30 가안</strong><span>대기·투어 약 3시간</span></div></div>
+<div class="stop"><div class="stop-no">3</div><div class="stop-copy"><b>🍴 점심·블루스프링 이동</b><span>이동 중 점심</span></div><div class="stop-time"><strong>13:00 전후</strong><span>식사·이동 약 1.5시간 배정</span></div></div>
+<div class="stop"><div class="stop-no">4</div><div class="stop-copy"><b>💧 블루스프링</b><span>Leslie Road 쪽 산책·사진</span></div><div class="stop-time"><strong>도착 목표 14:30</strong><span>약 1~1.5시간</span></div></div>
+<div class="stop"><div class="stop-no">5</div><div class="stop-copy"><b>🏠 친척집 복귀</b><span>도중 휴식·교통 상황 반영</span></div><div class="stop-time"><strong>19:00~20:00 복귀 가안</strong><span>저녁·친척집 숙박</span></div></div>
+</div></section>
 <section class="day-panel dp10">
-<div class="day-summary">
-<div>
-<div class="date-line">11월 12일 (목)</div>
-<h2>로토루아 → 와이토모 → 오클랜드</h2>
-<p>4명 · 반딧불 동굴 · Bayview 입성</p>
-<div class="day-stay"><span>🌙 오늘 숙박</span><strong>오클랜드 Bayview · 친척집 · 1/2박</strong></div>
-</div>
-</div>
-<div class="map-shell" data-map-index="9"><div class="travel-map" role="region" aria-label="10일차 지도"></div><p class="map-status" role="status">지도를 불러오는 중…</p></div><div class="map-legend">● 방문 장소를 누르면 이름 표시  ·  ┄ 직선 이동 순서</div>
-<div class="map-help">두 손가락으로 확대·축소 · 한 손가락으로 이동 · ＋/− 버튼으로 확대·축소</div>
-<div class="subhead">이동 구간 · 예상시간</div>
-<div class="legs"><div class="leg">
-<div class="leg-icon">🚗</div>
-<div><b>Rotorua → Waitomo</b><span>약 2시간</span></div>
-</div><div class="leg">
-<div class="leg-icon">🚗</div>
-<div><b>Waitomo → Auckland</b><span>약 2시간 30분</span></div>
-</div><div class="leg">
-<div class="leg-icon">🚗</div>
-<div><b>Auckland → Bayview</b><span>약 20~40분</span></div>
-</div></div>
-<div class="subhead">TODAY</div>
-<div class="stops"><div class="stop">
-<div class="stop-no">1</div>
-<div class="stop-copy">
-<b>🚗 로토루아 출발</b>
-<span>체크아웃</span>
-</div>
-<div class="stop-time">아침</div>
-</div><div class="stop">
-<div class="stop-no">2</div>
-<div class="stop-copy">
-<b>✨ Waitomo Glowworm Caves</b>
-<span>반딧불 동굴</span>
-</div>
-<div class="stop-time">낮</div>
-</div><div class="stop">
-<div class="stop-no">3</div>
-<div class="stop-copy">
-<b>🏠 Bayview</b>
-<span>친척집 체크인 · 휴식</span>
-</div>
-<div class="stop-time">오후</div>
-</div></div>
-<div class="next-card">
-<div class="next-kicker">NEXT · 11/13</div>
-<div class="next-main">
-<div class="sleep-dot">🌙</div>
-<div class="next-copy">
-<span>오늘 숙박 · Bayview</span>
-<b>Auckland 자유일 · 쇼핑 / 옵션</b>
-<small>선택 일정</small>
-</div>
-<div class="next-arrow">→</div>
-</div>
-</div>
-</section>
+<div class="day-summary"><div><div class="date-line">11월 12일 (목)</div><h2>친척집 ↔ 와이토모 또는 로토루아</h2><p>두 코스 중 하나 선택 · 미확정</p><div class="day-stay"><span>🌙 오늘 숙박</span><strong>오클랜드 Bayview · 친척집 · 3/4박</strong></div></div></div>
+<div class="map-shell" data-map-index="9"><div class="travel-map" role="region" aria-label="10일차 지도"></div><p class="map-status" role="status">지도를 불러오는 중…</p></div><div class="map-legend">번호는 지도상 장소 순서 · 점선은 실제 도로가 아닌 이동 방향 · 선택 코스는 모두 방문하지 않음</div><div class="map-help">두 손가락 확대·축소 · 한 손가락 이동 · ＋/− 버튼</div>
+<p class="timing-note">와이토모와 로토루아를 같은 날 모두 방문하지 않습니다. 선택·예약 후 정확한 출발·체류 시간을 맞춥니다. 왕복 운전이 길어 부모님 컨디션에 따라 친척집 휴식으로 바꿔도 됩니다.</p><div class="subhead">TODAY · 예상 도착 / 체류시간</div><div class="stops"><div class="stop"><div class="stop-no">1</div><div class="stop-copy"><b>✨ 선택 A · 와이토모</b><span>반딧불 동굴 투어·점심 후 복귀</span></div><div class="stop-time"><strong>오전 출발 · 예약 후 시간 확정</strong><span>대기·관광·점심 약 2~3시간 · 왕복 이동 별도</span></div></div>
+<div class="stop"><div class="stop-no">2</div><div class="stop-copy"><b>🌋 선택 B · 로토루아</b><span>테푸이아 등 핵심 관광 한 곳 중심</span></div><div class="stop-time"><strong>오전 출발 · 예약 후 시간 확정</strong><span>관광·식사 약 3~4시간 · 왕복 이동 별도</span></div></div>
+<div class="stop"><div class="stop-no">3</div><div class="stop-copy"><b>🏠 친척집 복귀</b><span>A 또는 B 중 한 코스 방문 후 귀가</span></div><div class="stop-time"><strong>저녁 · 교통·예약에 따라</strong><span>친척집 숙박</span></div></div>
+</div></section>
 <section class="day-panel dp11">
 <div class="day-summary">
 <div>
 <div class="date-line">11월 13일 (금)</div>
 <h2>오클랜드 자유일</h2>
-<p>4명 · 쇼핑 + 선택 일정</p>
-<div class="day-stay"><span>🌙 오늘 숙박</span><strong>오클랜드 Bayview · 친척집 · 2/2박</strong></div>
+<p>4명 · 친척과 시간 · 바닷가·쇼핑 선택</p>
+<div class="day-stay"><span>🌙 오늘 숙박</span><strong>오클랜드 Bayview · 친척집 · 4/4박</strong></div>
 </div>
 </div>
 <div class="map-shell" data-map-index="10"><div class="travel-map" role="region" aria-label="11일차 지도"></div><p class="map-status" role="status">지도를 불러오는 중…</p></div><div class="map-legend">● 방문 장소를 누르면 이름 표시  ·  ┄ 직선 이동 순서</div>
@@ -834,42 +481,31 @@ body{
 <div class="leg-icon">🚗</div>
 <div><b>CBD → Newmarket</b><span>약 10~15분</span></div>
 </div></div>
-<div class="subhead">TODAY</div>
+<p class="timing-note">친척과 시간을 보내거나 A·B·C 중 하나만 선택합니다. 와이헤케는 선착장 이동·페리 대기·섬 내 이동을 별도로 잡습니다.</p>
+<div class="subhead">TODAY · 예상 도착 / 체류시간</div>
 <div class="stops"><div class="stop">
 <div class="stop-no">1</div>
 <div class="stop-copy">
 <b>🍷 Waiheke Island</b>
 <span>와이너리 + 바다 + 점심</span>
 </div>
-<div class="stop-time">선택 A</div>
+<div class="stop-time"><strong>선택 A · 섬 도착 목표 10:00</strong><span>섬에서 약 5~6시간 · 왕복 이동 별도</span></div>
 </div><div class="stop">
 <div class="stop-no">2</div>
 <div class="stop-copy">
 <b>⛴️ Devonport</b>
 <span>가벼운 반나절 + 시내</span>
 </div>
-<div class="stop-time">선택 B</div>
+<div class="stop-time"><strong>선택 B · 도착 목표 10:00</strong><span>산책·점심 약 3~4시간</span></div>
 </div><div class="stop">
 <div class="stop-no">3</div>
 <div class="stop-copy">
 <b>🛍️ Mt Eden + Newmarket</b>
 <span>전망 + 쇼핑</span>
 </div>
-<div class="stop-time">선택 C</div>
+<div class="stop-time"><strong>선택 C · 도착 목표 10:00</strong><span>전망·쇼핑·점심 약 4~5시간</span></div>
 </div></div>
 <div class="subhead">OPTION</div><div class="chips"><span class="chip">＋ Waiheke</span><span class="chip">＋ Devonport</span><span class="chip">＋ Mt Eden + Newmarket</span><span class="chip">＋ Auckland Museum + Parnell</span></div>
-<div class="next-card">
-<div class="next-kicker">NEXT · 11/14</div>
-<div class="next-main">
-<div class="sleep-dot">🌙</div>
-<div class="next-copy">
-<span>오늘 숙박 · Bayview</span>
-<b>Bayview → Auckland Airport → Incheon</b>
-<small>공항까지 약 35~60분</small>
-</div>
-<div class="next-arrow">→</div>
-</div>
-</div>
 </section>
 <section class="day-panel dp12">
 <div class="day-summary">
@@ -890,28 +526,29 @@ body{
 <div class="leg-icon">✈️</div>
 <div><b>AKL → ICN</b><span>약 11시간 55분</span></div>
 </div></div>
-<div class="subhead">TODAY</div>
+<p class="timing-note">모든 시각은 해당 장소 현지시간입니다. 귀국편 시각은 기존 일정표 기준으로 항공권 확인이 필요합니다.</p>
+<div class="subhead">TODAY · 예상 도착 / 체류시간</div>
 <div class="stops"><div class="stop">
 <div class="stop-no">1</div>
 <div class="stop-copy">
 <b>🚗 Bayview 출발</b>
 <span>공항 이동</span>
 </div>
-<div class="stop-time">아침</div>
+<div class="stop-time"><strong>출발 목표 07:00</strong><span>공항 이동·주유·반납 약 1.5시간</span></div>
 </div><div class="stop">
 <div class="stop-no">2</div>
 <div class="stop-copy">
 <b>✈️ Auckland Airport</b>
 <span>KE412 출발</span>
 </div>
-<div class="stop-time">11:45</div>
+<div class="stop-time"><strong>공항 도착 목표 08:30</strong><span>기존 출발 11:45 · 수속 약 3시간</span></div>
 </div><div class="stop">
 <div class="stop-no">3</div>
 <div class="stop-copy">
 <b>🇰🇷 인천 도착</b>
 <span>여행 종료</span>
 </div>
-<div class="stop-time">19:40</div>
+<div class="stop-time"><strong>기존 인천 도착 19:40</strong><span>입국·짐 수령 약 1~1.5시간</span></div>
 </div></div>
 </section>
 </div>
@@ -928,12 +565,12 @@ body{
 <section class="main-panel m3">
 <div class="section-head"><h2>숙박 구성</h2><p>이동 피로를 줄인 추천 버전.</p></div>
 <div class="stays">
-<div class="stay"><div><small>11/4</small><b>Christchurch</b><span>도착 · 회복 · 장보기</span></div><div class="night">1박</div></div>
-<div class="stay"><div><small>11/5</small><b>Lake Tekapo</b><span>별보기</span></div><div class="night">1박</div></div>
-<div class="stay"><div><small>11/6</small><b>Aoraki / Mount Cook</b><span>후커밸리 후 휴식</span></div><div class="night">1박</div></div>
-<div class="stay"><div><small>11/7–9</small><b>Queenstown</b><span>동생 합류 · 밀포드 · 옵션</span></div><div class="night">3박</div></div>
-<div class="stay"><div><small>11/10–11</small><b>Rotorua</b><span>온천 · Te Puia · Hobbiton</span></div><div class="night">2박</div></div>
-<div class="stay"><div><small>11/12–13</small><b>Auckland · Bayview</b><span>친척집 · 쇼핑 · 자유일</span></div><div class="night">2박</div></div>
+<div class="stay"><div><small>11/4</small><b>Christchurch</b><span>도착·회복·장보기</span></div><div class="night">1박</div></div>
+<div class="stay"><div><small>11/5</small><b>Lake Tekapo</b><span>호숫가·별보기</span></div><div class="night">1박</div></div>
+<div class="stay"><div><small>11/6</small><b>Aoraki / Mount Cook</b><span>트레킹 후 휴식 · 기존 각 1박안 유지</span></div><div class="night">1박</div></div>
+<div class="stay"><div><small>11/7</small><b>Wanaka</b><span>동생 셔틀 합류 · 연결편 확인 필요</span></div><div class="night">1박</div></div>
+<div class="stay"><div><small>11/8–9</small><b>Queenstown</b><span>한 숙소 2박 · 관광·밀포드</span></div><div class="night">2박</div></div>
+<div class="stay"><div><small>11/10–13</small><b>Auckland · Bayview</b><span>친척집 4박 · 북섬 당일치기</span></div><div class="night">4박</div></div>
 </div>
 </section>
 <section class="main-panel m4">
@@ -943,7 +580,7 @@ body{
 </div>
 </section>
 </div>
-<div class="footer">NZ Family Trip 2026 · Leaflet · 방문 순서 지도 · v9</div>
+<div class="footer">NZ Family Trip 2026 · 남섬 6박 + 북섬 4박 · Leaflet</div>
 </div>
 <script src="vendor/leaflet.js"></script>
 <script src="maps.js"></script></body>
