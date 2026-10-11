@@ -5,9 +5,11 @@
   let data;
   try {
     if (!window.L) throw new Error('Leaflet unavailable');
-    const response = await fetch('map-data.json');
-    if (!response.ok) throw new Error('Map data unavailable');
-    data = await response.json();
+    // Ship schedule and map data in the same response to prevent mixed cached versions.
+    data = JSON.parse(document.getElementById('trip-map-data').textContent);
+    if (shells.some(shell => !data.some(day => day.date === shell.dataset.mapDate))) {
+      throw new Error('Missing date-matched map data');
+    }
   } catch (error) {
     shells.forEach(shell => { shell.querySelector('.map-status').textContent = '지도를 불러오지 못했습니다. 연결을 확인한 뒤 새로고침해주세요.'; });
     return;
@@ -16,7 +18,7 @@
     shells.filter(shell => shell.getBoundingClientRect().width > 0).forEach(shell => {
       const index = Number(shell.dataset.mapIndex);
       if (maps.has(index)) { maps.get(index).invalidateSize({pan: false}); return; }
-      const {points, routes} = data[index];
+      const {points, routes} = data.find(day => day.date === shell.dataset.mapDate);
       const element = shell.querySelector('.travel-map');
       const status = shell.querySelector('.map-status');
       const map = L.map(element, {zoomControl: false, dragging: true, touchZoom: true, scrollWheelZoom: false, maxZoom: 19});
